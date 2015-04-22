@@ -4,6 +4,6 @@
 **关于dropzonejs开源项目，请访问dropzonejs的[GitHub主页](https://github.com/enyo/dropzone, 'dropzone')**  
 
 ###声明###
-**中文文档完全是在本来学习和理解的基础上进行的翻译，不保证翻译完全正确，请参照对比官方文档使用[dropzonejs.com](http://www.dropzonejs.com/,'dropzonejs')**
+**中文文档完全是在本来学习和理解的基础上进行的翻译，不保证翻译完全正确，请参照对比官方文档使用[dropzonejs.com](http://www.dropzonejs.com/)**
 
 
