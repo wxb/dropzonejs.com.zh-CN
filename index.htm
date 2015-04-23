@@ -178,52 +178,46 @@
 
   <h1 id="installation">安装</h1>
 
-  <p>You probably only need to look at the <a href="simple.html" tppabs="http://www.dropzonejs.com/examples/simple.html">simple example</a> (<a href="javascript:if(confirm('https://github.com/enyo/dropzone/blob/gh-pages/examples/simple.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/enyo/dropzone/blob/gh-pages/examples/simple.html'" tppabs="https://github.com/enyo/dropzone/blob/gh-pages/examples/simple.html">source</a>)
-to get started. Continue reading for step by step instructions and different
-installation approaches.</p>
+  <p>你也许只要看一下这个 <a href="simple.html" tppabs="http://www.dropzonejs.com/examples/simple.html">简单示例</a> (<a href="https://github.com/enyo/dropzone/blob/gh-pages/examples/simple.html">源代码</a>)
+就可以开始. 继续一步一步学习下面的知道和不同的安装方法.</p>
 
   <hr />
 
-  <p>Download the standalone <a href="javascript:if(confirm('https://raw.github.com/enyo/dropzone/master/dist/dropzone.js  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://raw.github.com/enyo/dropzone/master/dist/dropzone.js'" tppabs="https://raw.github.com/enyo/dropzone/master/dist/dropzone.js">dropzone.js</a>
-and include it like this:</p>
+  <p>下载单独的 <a href="https://raw.github.com/enyo/dropzone/master/dist/dropzone.js">dropzone.js</a> 并像下面这样在文件中引入:</p>
 
   <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./path/to/dropzone.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
 
-  <p>Dropzone is now activated and available as <code>window.Dropzone</code>.</p>
+  <p>现在,Dropzone 已经被激活，用<code>window.Dropzone</code>来使用.</p>
 
   <blockquote>
-    <p>Dropzone does <em>not</em> handle your file uploads on the server. You have to implement
-the code to receive and store the file yourself. See the section
-<a href="#server-side-implementation">Server side implementation</a> for more information.</p>
+    <p>Dropzone <em>不会</em> 处理你上传到服务器上面的文件. 你必须自己编写代码实现接受和保存上传的文件. 请参考
+<a href="#server-side-implementation">服务器端实现</a>部分的详细信息.</p>
   </blockquote>
 
-  <p>This is all you need to get dropzone up and running, but if you want it to look
-like the dropzone on this page, youâ€™ll need to <strong>download dropzone.css</strong>
-from the <a href="javascript:if(confirm('https://github.com/enyo/dropzone/tree/master/dist  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/enyo/dropzone/tree/master/dist'" tppabs="https://github.com/enyo/dropzone/tree/master/dist">dist folder</a>.</p>
+  <p>这是你需要运行dropzone上传代码的所有工作, 但是如果你想要让你的dropzone拥有和本页面上的dropzone一样的效果, 你就需要从 <a href="https://github.com/enyo/dropzone/tree/master/dist">dist 文件夹</a>中下载样式文件 <strong>dropzone.css</strong>.</p>
+ 
 
-  <h2 id="with-component">With component</h2>
+  <h2 id="with-component">使用组件</h2>
 
-  <p>If you use <a href="javascript:if(confirm('https://github.com/component/component  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/component/component'" tppabs="https://github.com/component/component">component</a> you can just add
-dropzone as a dependency:</p>
+  <p>如果你要使用 <a href="https://github.com/component/component">组件</a> 你只需要添加 dropzone 作为一个依赖:</p>
 
   <pre><code>"enyo/dropzone": "*"
 </code></pre>
 
-  <p>Then include it like this:</p>
+  <p>然后就像下面这样引入:</p>
 
   <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Dropzone</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;dropzone&quot;</span><span class="p">);</span></code></pre></div>
 
-  <p>so it is activated and scans the document.</p>
+  <p>这样他就被激活了并自动扫描文档.</p>
 
-  <p>The basic CSS markup is also included with component, but if you want it to look
-the same as on this page, you have to download the CSS (see below).</p>
+  <p>基础的CSS样式也被包含在组件中, 但是如果你想让它看起来和本页一样, 你就必须现在CSS文件 (见下文).</p>
 
-  <h2 id="with-requirejs">With RequireJS</h2>
+  <h2 id="with-requirejs">使用 RequireJS</h2>
 
-  <p>Dropzone is also available as an <a href="javascript:if(confirm('https://github.com/amdjs/amdjs-api/wiki/AMD  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/amdjs/amdjs-api/wiki/AMD'" tppabs="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD module</a>
-for <a href="javascript:if(confirm('http://requirejs.org/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://requirejs.org/'" tppabs="http://requirejs.org/">RequireJS</a>.</p>
+  <p>Dropzone is also available as an <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD module</a>
+for <a href="http://requirejs.org/">RequireJS</a>.</p>
 
-  <p>You can find the <a href="javascript:if(confirm('https://raw.github.com/enyo/dropzone/master/dist/dropzone-amd-module.js  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://raw.github.com/enyo/dropzone/master/dist/dropzone-amd-module.js'" tppabs="https://raw.github.com/enyo/dropzone/master/dist/dropzone-amd-module.js">dropzone-amd-module</a>
+  <p>You can find the <a href="https://raw.github.com/enyo/dropzone/master/dist/dropzone-amd-module.js">dropzone-amd-module</a>
 in the downloads folder.</p>
 
 </section>
@@ -243,20 +237,17 @@ in the downloads folder.</p>
 
   <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;file&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
 
-  <p>If you want another name than <code>file</code> you can <a href="#configuration">configure dropzone</a>
-with the option <code>paramName</code>.</p>
+  <p>如果你想使用其他的名字来替换 <code>file</code> 你可以在 <a href="#configuration">configure dropzone</a>
+中设置选项 <code>paramName</code>.</p>
 
   <blockquote>
-    <p>If youâ€™re using component donâ€™t forget to <code>require("dropzone");</code> otherwise it wonâ€™t be activated.</p>
+    <p>如果你正在使用组件，别忘记 <code>require("dropzone");</code> 否则他将不会被激活.</p>
   </blockquote>
 
-  <p>If you want your file uploads to work even without JavaScript, you can include
-an element with the class <code>fallback</code> that dropzone will remove if the browser
-is supported. If the browser isnâ€™t supported, Dropzone will not create fallback
-elements if there is a fallback element already provided. (Obviously, if the
-browser doesnâ€™t support JavaScript, the form will stay as is)</p>
+  <p>如果你想要你的文件上传正确工作，甚至在没有JavaScript环境中, 你可以引入一个 class是 <code>fallback</code>的元素, 在浏览器支持的情况下, dropzone会删除这个元素 . 如果浏览器不支持, Dropzone 将不会删除 fallback
+元素,前提是你提供了这个元素. (显然, 如果浏览器不支持JavaScript,form将保持原来的样子)</p>
 
-  <p>Typically this will look like this:</p>
+  <p>通常会看起来像这样:</p>
 
   <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;/file-upload&quot;</span> <span class="na">class=</span><span class="s">&quot;dropzone&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fallback&quot;</span><span class="nt">&gt;</span>
@@ -264,55 +255,50 @@ browser doesnâ€™t support JavaScript, the form will stay as is)</p>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
-  <h2 id="create-dropzones-programmatically">Create dropzones programmatically</h2>
+  <h2 id="create-dropzones-programmatically">程序化的方式创建 dropzones </h2>
 
-  <p>Alternatively you can create dropzones programmaticaly (even on non <code>form</code>
-elements) by instantiating the <code>Dropzone</code> class</p>
+  <p>或者你可以程序化方式创建 dropzones (甚至不在 <code>form</code>
+元素上) 通过初始化一个 <code>Dropzone</code> 类对象</p>
 
   <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Dropzone class:</span>
 <span class="kd">var</span> <span class="nx">myDropzone</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dropzone</span><span class="p">(</span><span class="s2">&quot;div#myId&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;/file/post&quot;</span><span class="p">});</span></code></pre></div>
 
-  <p>or if you use jQuery, you can use the jQuery plugin Dropzone ships with:</p>
+  <p>或者如果您使用 jQuery，您可以使用 Dropzone 附带的 jQuery 插件:</p>
 
   <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// jQuery</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div#myId&quot;</span><span class="p">).</span><span class="nx">dropzone</span><span class="p">({</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;/file/post&quot;</span> <span class="p">});</span></code></pre></div>
 
   <blockquote>
-    <p>Donâ€™t forget to specify an <code>url</code> option if youâ€™re not using a form element,
-since Dropzone doesnâ€™t know where to post to without an <code>action</code> attribute.</p>
+    <p>不要忘记指定<code>url</code>选项如果您不使用窗体元素，因为 Dropzone 不知道在哪儿发布到无<code>action</code>属性.</p>
   </blockquote>
 
-  <h2 id="server-side-implementation">Server side implementation</h2>
+  <h2 id="server-side-implementation">服务器端实现</h2>
 
-  <p>Dropzone does <em>not</em> provide the server side implementation of handling the files,
-but the way files are uploaded is identical to simple file upload forms like this:</p>
+  <p>Dropzone 并不提供服务器端实现的处理文件，但是文件的方式都是上传就等于像这样简单的文件上传表单:</p>
 
   <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">enctype=</span><span class="s">&quot;multipart/form-data&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;file&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
-  <p>To handle basic file uploads on the server, please look at the corresponding
-documentation. Here are a few documentations, if you think I should add some,
-please contact me.</p>
+  <p>若要处理服务器上的基本文件上传，请看看相应的文件中的处理方法。这里只提供了一些，如果你认为我应该添加一些，请与我联系.</p>
 
   <ul>
-    <li><a href="javascript:if(confirm('http://howtonode.org/really-simple-file-uploads  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://howtonode.org/really-simple-file-uploads'" tppabs="http://howtonode.org/really-simple-file-uploads">NodeJS with express</a></li>
-    <li><a href="javascript:if(confirm('http://guides.rubyonrails.org/form_helpers.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://guides.rubyonrails.org/form_helpers.html#uploading-files'" tppabs="http://guides.rubyonrails.org/form_helpers.html#uploading-files">Ruby on rails</a></li>
-    <li><a href="javascript:if(confirm('http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php'" tppabs="http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php">Complete PHP tutorial</a> by startutorial.com</li>
-    <li><a href="javascript:if(confirm('http://www.php.net/manual/en/features.file-upload.post-method.php  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.php.net/manual/en/features.file-upload.post-method.php#example-354'" tppabs="http://www.php.net/manual/en/features.file-upload.post-method.php#example-354">Basic PHP file upload</a></li>
-    <li><a href="javascript:if(confirm('http://maxoffsky.com/code-blog/howto-ajax-multiple-file-upload-in-laravel/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://maxoffsky.com/code-blog/howto-ajax-multiple-file-upload-in-laravel/'" tppabs="http://maxoffsky.com/code-blog/howto-ajax-multiple-file-upload-in-laravel/">Tutorial for Dropzone and Lavarel (PHP)</a> written by Maksim Surguy</li>
-    <li><a href="javascript:if(confirm('http://www.jesuisundev.fr/upload-drag-drop-via-dropzonejs-symfony2-on-cloud-amazon-s3/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.jesuisundev.fr/upload-drag-drop-via-dropzonejs-symfony2-on-cloud-amazon-s3/'" tppabs="http://www.jesuisundev.fr/upload-drag-drop-via-dropzonejs-symfony2-on-cloud-amazon-s3/">Symfony2 and Amazon S3</a></li>
-    <li><a href="javascript:if(confirm('http://venkatbaggu.com/file-upload-in-asp-net-mvc-using-dropzone-js-and-html5/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://venkatbaggu.com/file-upload-in-asp-net-mvc-using-dropzone-js-and-html5/'" tppabs="http://venkatbaggu.com/file-upload-in-asp-net-mvc-using-dropzone-js-and-html5/">File upload in ASP.NET MVC using Dropzone JS and HTML5</a></li>
+    <li><a href="http://howtonode.org/really-simple-file-uploads">NodeJS with express</a></li>
+    <li><a href="http://guides.rubyonrails.org/form_helpers.html#uploading-files">Ruby on rails</a></li>
+    <li><a href="http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php">Complete PHP tutorial</a> by startutorial.com</li>
+    <li><a href="http://www.php.net/manual/en/features.file-upload.post-method.php#example-354">Basic PHP file upload</a></li>
+    <li><a href="http://maxoffsky.com/code-blog/howto-ajax-multiple-file-upload-in-laravel/">Tutorial for Dropzone and Lavarel (PHP)</a> written by Maksim Surguy</li>
+    <li><a href="http://www.jesuisundev.fr/upload-drag-drop-via-dropzonejs-symfony2-on-cloud-amazon-s3/">Symfony2 and Amazon S3</a></li>
+    <li><a href="http://venkatbaggu.com/file-upload-in-asp-net-mvc-using-dropzone-js-and-html5/">File upload in ASP.NET MVC using Dropzone JS and HTML5</a></li>
   </ul>
 
-  <p>Paid documentations:</p>
+  <p>付费文档:</p>
 
   <ul>
-    <li><a href="javascript:if(confirm('http://www.startutorial.com/homes/dropzonejs_php_the_complete_guide?utm_source=dzj&utm_medium=banner&utm_campaign=dropzonejs  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.startutorial.com/homes/dropzonejs_php_the_complete_guide?utm_source=dzj&utm_medium=banner&utm_campaign=dropzonejs'" tppabs="http://www.startutorial.com/homes/dropzonejs_php_the_complete_guide?utm_source=dzj&utm_medium=banner&utm_campaign=dropzonejs">eBook for Dropzone with PHP</a> by startutorial.com.</li>
+    <li><a href="http://www.startutorial.com/homes/dropzonejs_php_the_complete_guide?utm_source=dzj&utm_medium=banner&utm_campaign=dropzonejs">eBook for Dropzone with PHP</a> by startutorial.com.</li>
   </ul>
 
-  <p>Please look at the <a href="javascript:if(confirm('https://github.com/enyo/dropzone/wiki/FAQ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/enyo/dropzone/wiki/FAQ'" tppabs="https://github.com/enyo/dropzone/wiki/FAQ">Dropzone FAQ</a> if
-you need more information.</p>
+  <p>请如果您需要更多的信息看<a href="https://github.com/enyo/dropzone/wiki/FAQ">Dropzone FAQ</a>.</p>
 
 </section>
 
@@ -322,18 +308,14 @@ you need more information.</p>
 
   <p>这里有两种方式配置 dropzones.</p>
 
-  <p>The obvious way is to pass an options object when instantiating a dropzone
-programmatically like in the previous <a href="#create-dropzones-programmatically">create dropzones programmatically</a>
-section.</p>
+  <p>最明显的方式是通过程序化的方法实例化一个dropzone 对象, 就像上一节 <a href="#create-dropzones-programmatically">create dropzones programmatically</a>看到的一样.</p>
 
-  <p>But if you just have HTML elements with the <code>dropzone</code> class, then you donâ€™t
-programmatically instantiate the objects, so you have to store the configuration
-somewhere so Dropzone knows how to configure the dropzones when instantiating
-them.</p>
+  <p>但是如果你仅仅使用一个class是 <code>dropzone</code>的HTML元素, 不想以程序化的方式实例化一个对象, 所以你就必须在某个地方保存配置信息以便让  Dropzone 实例化dropzones的HTML元素时知道如果配置它们.</p>
 
-  <p>This is done with the <code>Dropzone.options</code> object.</p>
+  <p>通过使用 <code>Dropzone.options</code> 对象.</p>
 
   <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// &quot;myAwesomeDropzone&quot; is the camelized version of the HTML element&#39;s ID</span>
+  <span class="c1">// &quot;myAwesomeDropzone&quot; 是dropzone的HTML元素ID的驼峰命名</span>
 <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myAwesomeDropzone</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">paramName</span><span class="o">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span> <span class="c1">// The name that will be used to transfer the file</span>
   <span class="nx">maxFilesize</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// MB</span>
@@ -345,43 +327,39 @@ them.</p>
   <span class="p">}</span>
 <span class="p">};</span></code></pre></div>
 
-  <p>If you want to disable the auto discover behaviour of Dropzone, you can either disable
-it on a per element basis, or in general:</p>
+  <p>如果您想要禁用自动发现 Dropzone 行为, 你也可以在每个元素基础或在一般全局上禁用它:</p>
 
   <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Prevent Dropzone from auto discovering this element:</span>
+  <span class="c1">// 阻止 Dropzone 自动寻找这个元素:</span>
 <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myAwesomeDropzone</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 <span class="c1">// This is useful when you want to create the</span>
 <span class="c1">// Dropzone programmatically later</span>
 
 <span class="c1">// Disable auto discover for all elements:</span>
+<span class="c1">// 禁止对所有元素的自动查找:</span>
 <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">autoDiscover</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span></code></pre></div>
 
-  <h2 class="anchor" id="configuration-options">Configuration options</h2>
+  <h2 class="anchor" id="configuration-options">配置项</h2>
   <table>
   <thead>
 
-    <tr><th class="title" colspan="2"><div class="header">Configuration options</div></th></tr>
-    <tr><th>Option</th><th>Description</th></tr>
+    <tr><th class="title" colspan="2"><div class="header">配置项</div></th></tr>
+    <tr><th>选项</th><th>描述</th></tr>
 
   </thead>
   <tbody>
     <tr id="config-url">
       <td><a href="#config-url"><code>url</code></a></td>
       <td>
-        Has to be specified on elements other than form (or when the form
-        doesn't have an <code>action</code> attribute). You can also
-        provide a function that will be called with <code>files</code> and
-        must return the url (since <code>v3.12.0</code>)
+        必须被设置,当dropzone在 form 表单以外的元素上时[译者注:dropzone不一定要在form元素上，也可以在一个div上，这里的意思就是假如在一个div上时必须设置URL](或者form表单没有 <code>action</code> 属性). 你也可以提供一个被 <code>files</code>调用的函数 并且必须返回 url (从 <code>v3.12.0</code>开始)
       </td>
 
     </tr><tr id="config-method">
 
       <td><a href="#config-method"><code>method</code></a></td>
       <td>
-        Defaults to <code>"post"</code> and can be changed to
-        <code>"put"</code> if necessary. You can also provide a function
-        that will be called with <code>files</code> and must return the
-        method (since <code>v3.12.0</code>)
+        默认<code>"post"</code> 如有必要也可以修改成
+        <code>"put"</code> . 你也可以提供一个被 <code>files</code>调用的函数 并且必须返回 method (since <code>v3.12.0</code>)
        </td>
 
     </tr><tr id="config-parallelUploads">
