@@ -366,25 +366,23 @@ in the downloads folder.</p>
 
       <td><a href="#config-parallelUploads"><code>parallelUploads</code></a></td>
       <td>
-        How many file uploads to process in parallel (See the
-        <em>Enqueuing file uploads</em> section for more info)
+        有多少文件将上载到并行处理 (见
+        <em>进行排队文件上传</em> 部分获取更多信息)
       </td>
 
     </tr><tr id="config-maxFilesize">
 
       <td><a href="#config-maxFilesize"><code>maxFilesize</code></a></td>
-      <td>in MB</td>
+      <td>以MB为单位[译者注：上传文件的大小限制]</td>
 
     </tr><tr id="config-filesizeBase">
 
       <td><a href="#config-filesizeBase"><code>filesizeBase</code></a></td>
       <td>
-        Defaults to <code>1000</code>. This defines whether a base of
-        <code>1000</code> or <code>1024</code> should be used to calculate
-        file sizes. <code>1000</code> is correct, because <code>1000 Bytes</code>
-        equal <code>1 Kilobyte</code>, and <code>1024 Bytes</code> equal
-        <code>1 Kibibyte</code>. You can change this to <code>1024</code> if
-        you don't care about validity.
+        默认值为 <code>1000</code>. 这个选项将设置在计算文件大小时使用
+        <code>1000</code> 还是使用 <code>1024</code>作为基本单位. <code>1000</code> 是正确的, 因为 <code>1000 Bytes</code>
+        等于 <code>1 Kilobyte</code>,  <code>1024 Bytes</code> 等于
+        <code>1 Kibibyte</code>. 如果你不在乎有效性，您可以更改这个选项为 <code>1024</code> .
       </td>
 
     </tr><tr id="config-paramName">
@@ -393,27 +391,23 @@ in the downloads folder.</p>
       <td>
         设置传输文件名称参数. 默认是
         <code>file</code>. <strong>注意</strong>: 如果你将配置项
-        <code>uploadMultiple</code> 设置为 <code>true</code>, then
-        Dropzone will append <code>[]</code> to the name.
+        <code>uploadMultiple</code> 设置为 <code>true</code>, 那么
+        Dropzone 将在paramName设置的name的后面追加 <code>[]</code>.
       </td>
 
     </tr><tr id="config-uploadMultiple">
 
       <td><a href="#config-uploadMultiple"><code>uploadMultiple</code></a></td>
       <td>
-        Whether Dropzone should send multiple files in one request. If
-        this it set to true, then the fallback file input element will
-        have the <code>multiple</code> attribute as well. This option will
-        also trigger additional events (like
-        <code>processingmultiple</code>). See the events section for more
-        information.
+        是否 Dropzone 应该在一个请求中发送多个文件. 如果此设置为 true，然后fallbach 中 input 的元素将具有<code>multiple</code>属性. 此选项还会触发其他事件 (如
+        <code>processingmultiple</code>). 请参阅事件部分了解更多信息.
       </td>
 
     </tr><tr id="config-headers">
 
       <td><a href="#config-headers"><code>headers</code></a></td>
       <td>
-        An object to send additional headers to the server. Eg:
+        要向服务器发送的其他头文件的对象. 例如:
         <code>headers: { "My-Awesome-Header": "header value" }</code>
       </td>
 
