@@ -667,8 +667,8 @@ in the downloads folder.</p>
     <span class="nt">&lt;img</span> <span class="na">data-dz-thumbnail</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dz-progress&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;dz-upload&quot;</span> <span class="na">data-dz-uploadprogress</span><span class="nt">&gt;&lt;/span&gt;&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dz-success-mark&quot;</span><span class="nt">&gt;&lt;span&gt;</span>âœ”<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dz-error-mark&quot;</span><span class="nt">&gt;&lt;span&gt;</span>âœ˜<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dz-success-mark&quot;</span><span class="nt">&gt;&lt;span&gt;</span>✔<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dz-error-mark&quot;</span><span class="nt">&gt;&lt;span&gt;</span>✘<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dz-error-message&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-dz-errormessage</span><span class="nt">&gt;&lt;/span&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
@@ -680,39 +680,35 @@ config.</p>
 
   <p>你可以在任何事件中访问文件预览的HTML 通过使用 <code>file.previewElement</code>.</p>
 
-  <p>如果你决定从零开始重新 <code>previewTemplate</code> , you should put elements with the <code>data-dz-*</code> attributes inside:</p>
+  <p>如果你决定从零开始重新 <code>previewTemplate</code> , 你应该在里面放上用<code>data-dz-*</code>参数定义的元素 :</p>
 
   <ul>
     <li><code>data-dz-name</code></li>
     <li><code>data-dz-size</code></li>
-    <li><code>data-dz-thumbnail</code> (This has to be an <code>&lt;img /&gt;</code> element and the <code>alt</code> and <code>src</code> attributes will be changed by Dropzone)</li>
-    <li><code>data-dz-uploadprogress</code> (Dropzone will change the <code>style.width</code> property from <code>0%</code> to <code>100%</code> whenever thereâ€™s a <code>uploadprogress</code> event)</li>
+    <li><code>data-dz-thumbnail</code> (这里必须是一个 <code>&lt;img /&gt;</code> 元素 ，并且<code>alt</code> 和 <code>src</code> 属性将被 Dropzone改变)</li>
+    <li><code>data-dz-uploadprogress</code> ( 当这里有一个 <code>uploadprogress</code>事件时， Dropzone 将更改 <code>style.width</code> 属性从 <code>0%</code> 到 <code>100%</code> )</li>
     <li><code>data-dz-errormessage</code></li>
   </ul>
 
-  <p>The default options for Dropzone will look for those element and update the content for it.</p>
+  <p>Dropzone 的默认选项将寻找这些元素，并为它更新的内容.</p>
 
-  <p>If you want some specific link to remove a file (instead of the built in <a href="#config-addRemoveLinks"><code>addRemoveLinks</code></a> config), you can simply insert elements
-in the template with the <code>data-dz-remove</code> attribute. Example:</p>
+  <p>如果你想要一些特殊的链接来删除文件(而不是使用内置的 <a href="#config-addRemoveLinks"><code>addRemoveLinks</code></a>配置 ), 你可以简单地在模板中插入一个属性值是 <code>data-dz-remove</code> 的HTML元素. 例如:</p>
 
   <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;removebutton.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;Click me to remove the file.&quot;</span> <span class="na">data-dz-remove</span> <span class="nt">/&gt;</span></code></pre></div>
 
-  <p>You are not forced to use those conventions though. If you override all the default event listeners
-you can completely rebuild your layout from scratch.</p>
+  <p>并不强制要求你去配置修改这些，如果你重写了所有的默认事件侦听器，你完全可以从零开始重建你的布局.</p>
 
-  <p>See the installation section on how to add the stylesheet and spritemaps if you want your dropzone to look like the one on this page.</p>
+  <p>如果你想让你的dropzone看起来和本页显示一样的效果，应该如何添加样式表和脚本？请参阅安装部分.</p>
 
-  <p>See the <a href="#theming">Theming</a> section, for a more in depth look at how to change Dropzoneâ€™s UI.</p>
+  <p>请参阅<a href="#theming">Theming</a>部分 较为深入看看如何改变 Dropzone 的用户界面.</p>
 
-  <p>I created an example where I made Dropzone look and feel exactly the way jQuery
-File Uploader does with a few lines of configuration code. <a href="bootstrap.html" tppabs="http://www.dropzonejs.com/bootstrap.html">Check it out!</a></p>
+  <p>我创建了一个例子，我只是用来几行简单的配置，就让 Dropzone 看起来和感觉起来跟 jQuery 上传文件的方式完全一样. <a href="bootstrap.html" tppabs="http://www.dropzonejs.com/bootstrap.html">Check it out!</a></p>
 
   <blockquote>
-    <p>Again, please look at the <a href="javascript:if(confirm('https://github.com/enyo/dropzone/wiki/FAQ  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/enyo/dropzone/wiki/FAQ'" tppabs="https://github.com/enyo/dropzone/wiki/FAQ">Dropzone FAQ</a> if
-youâ€™re still unclear about some features.</p>
+    <p>再次, 如果你仍然不清楚某些功能，请去看看 <a href="https://github.com/enyo/dropzone/wiki/FAQ">Dropzone FAQ</a> .</p>
   </blockquote>
 
-  <h2 id="dropzone-methods">Dropzone methods</h2>
+  <h2 id="dropzone-methods">Dropzone 方法</h2>
 
   <p>If you want to remove an added file from the dropzone, you can call <code>.removeFile(file)</code>.
 This method also triggers the <code>removedfile</code> event.</p>
