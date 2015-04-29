@@ -1,6 +1,6 @@
 ## dropzonejs.com.zh-CN ##
 
-**dropzonejs.com.zh-CN 主要是针对在学习和使用dropzonejs的过程中， 对官方网站： [dropzonejs.com](http://www.dropzonejs.com/)英文文档根据自己理解制作的中文翻译文档手册**   
+**dropzonejs.com.zh-CN 主要是针对在学习和使用dropzonejs的过程中， 对官方网站： [dropzonejs.com](http://www.dropzonejs.com/)英文文档根据自己理解制作的中文翻译文档手册:[Dropzonejs中文手册](http://wxb.github.io/dropzonejs.com.zh-CN/dropzonezh-CN/)**   
 **关于dropzonejs开源项目，请访问dropzonejs的[GitHub主页](https://github.com/enyo/dropzone)**  
 
 ###声明###
