@@ -710,51 +710,44 @@ config.</p>
 
   <h2 id="dropzone-methods">Dropzone 方法</h2>
 
-  <p>If you want to remove an added file from the dropzone, you can call <code>.removeFile(file)</code>.
-This method also triggers the <code>removedfile</code> event.</p>
+  <p>如果你想删除已添加到dropzone中的文件，你可以调用 <code>.removeFile(file)</code>.
+这个方法也可以触发 <code>removedfile</code> 事件.</p>
 
-  <p>Hereâ€™s an example that would automatically remove a file when itâ€™s finished uploading:</p>
+  <p>下面是一个当文件上传完成后自动删除文件的示例:</p>
 
   <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">myDropzone</span><span class="p">.</span><span class="nx">removeFile</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
 <span class="p">});</span></code></pre></div>
 
-  <p>If you want to remove all files, simply use <code>.removeAllFiles()</code>. Files that are
-in the process of being uploaded wonâ€™t be removed. If you want files that are
-currently uploading to be canceled, call <code>.removeAllFiles(true)</code> which will
-cancel the uploads.</p>
+  <p>如果你想删除所有的文件，简单的使用<code>.removeAllFiles()</code>就可以了.这样调用删除文件并不会删除正在被上传的文件. 如果你想要取消正在上传的文件, 调用 <code>.removeAllFiles(true)</code> 将会取消正在上传的文件.</p>
 
   <hr />
 
-  <p>If you have <code>autoProcessQueue</code> disabled, youâ€™ll need to call <code>.processQueue()</code>
-yourself.</p>
+  <p>如果你设置 <code>autoProcessQueue</code> 禁用了自动上传, 你需要自己调用<code>.processQueue()</code>.</p>
 
-  <p>This can be useful if you want to display the files and let the user click an
-accept button to actually upload the file(s).</p>
+  <p>这是很有用的，如果你想显示文件让用户点击确认按钮来上传文件.</p>
 
   <hr />
 
-  <p>To access all files in the dropzone, use <code>myDropzone.files</code>.</p>
+  <p>若要访问 dropzone 中的所有文件，请使用 <code>myDropzone.files</code>[译者注： 这里的myDropzone指的是dropzone对象，files是下面的这些方法].</p>
 
-  <p>To get</p>
+  <p>要获得</p>
 
   <ul>
-    <li>all accepted files: <code>.getAcceptedFiles()</code></li>
-    <li>all rejected files: <code>.getRejectedFiles()</code></li>
-    <li>all queued files: <code>.getQueuedFiles()</code></li>
-    <li>all uploading files: <code>.getUploadingFiles()</code></li>
+    <li>所有接受文件: <code>.getAcceptedFiles()</code></li>
+    <li>所有被拒绝的文件: <code>.getRejectedFiles()</code></li>
+    <li>所有排队的文件: <code>.getQueuedFiles()</code></li>
+    <li>所有上传文件: <code>.getUploadingFiles()</code></li>
   </ul>
 
   <hr />
 
-  <p>If you do not need a dropzone anymore, just call <code>.disable()</code> on the object. This
-will remove all event listeners on the element, and clear all file arrays. To
-reenable a Dropzone use <code>.enable()</code>.</p>
+  <p>如果你不再需要 dropzone , 只需要dropzone对象上调用 <code>.disable()</code> . 这将移除元素上所有的事件监听, 并且清除所有的文件数组. 若要重启Dropzone使用 <code>.enable()</code>.</p>
 
   <hr />
 
-  <p>If you donâ€™t like the default browser modals for <code>confirm</code> calls,
-you can handle them yourself by overwriting <code>Dropzone.confirm</code>.</p>
+  <p>如果你不喜欢浏览器默认的 <code>confirm</code> 对话框,
+你可以通过重写 <code>Dropzone.confirm</code>来替换它们.</p>
 
   <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">Dropzone</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">question</span><span class="p">,</span> <span class="nx">accepted</span><span class="p">,</span> <span class="nx">rejected</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Ask the question, and call accepted() or rejected() accordingly.</span>
@@ -767,11 +760,9 @@ you can handle them yourself by overwriting <code>Dropzone.confirm</code>.</p>
 
   <h1 id="events">事件</h1>
 
-  <p>Dropzone triggers events when processing files, to which you can register easily,
-by calling <code>.on(eventName, callbackFunction)</code> on your <em>instance</em>.</p>
+  <p>当处理文件时触发事件, 你可以通过调用 <code>.on(eventName, callbackFunction)</code> 很容易地在你的 <em>instance[实例]</em>注册事件监听.</p>
 
-  <p>Since listening to events can only be done on <em>instances</em> of Dropzone, the best
-place to setup your event listeners, is in the <code>init</code> function:</p>
+  <p>事件监听器只能在Dropzone的<em>instances[实例]</em> 上注册 , 添加你的事件监听器最好的地方是 在 <code>init</code> 方法中:</p>
 
   <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// The recommended way from within the init configuration:</span>
 <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myAwesomeDropzone</span> <span class="o">=</span> <span class="p">{</span>
@@ -780,8 +771,8 @@ place to setup your event listeners, is in the <code>init</code> function:</p>
   <span class="p">}</span>
 <span class="p">};</span></code></pre></div>
 
-  <p>If you <a href="#create-dropzones-programmatically">create your Dropzones programmatically</a>,
-you can setup your event listeners on your instances, like this:</p>
+  <p>If you <a href="#create-dropzones-programmatically">如果你以程序化的方式创建dropzone</a>,
+你可以像下面这样在你的实例上注册事件监听器:</p>
 
   <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// This example uses jQuery so it creates the Dropzone, only when the DOM has</span>
 <span class="c1">// loaded.</span>
@@ -800,20 +791,15 @@ you can setup your event listeners on your instances, like this:</p>
   <span class="p">});</span>
 <span class="p">})</span></code></pre></div>
 
-  <p>This is a bit more complex, and not necessary unless you have a good reason
-to instantiate Dropzones programmatically.</p>
+  <p>这是有点更复杂，也没有必要，除非你有一个好的理由以编程方式实例化dropzone.</p>
 
   <blockquote>
-    <p>Dropzone itself relies heavily on events. Everything thatâ€™s visual is created
-by listening to them. Those event listeners are setup in the default configuration
-of every Dropzone and can be overwritten, thus replacing the default behavior
-with your own event callback.</p>
+    <p>Dropzone 本身依赖于事件. 你看到的所以事情都是通过事件监听器完成的. 这些事件侦听在dropzone中都有默认的配置，你可以重写来覆盖这些默认的行为，从而用您自己的事件行为来替换dropzone默认行为.</p>
   </blockquote>
 
-  <p>You should only do this when you really know how Dropzone works, and when you
-want to <a href="#theming-dropzone">completely theme your Dropzone</a></p>
+  <p>当你正真的知道dropzone是怎样工作的，当你想要<a href="#theming-dropzone">完全主题化你的dropzone</a>行为时，你就应该设置这些事件侦听</p>
 
-  <h2 class="anchor" id="event-list">Event List</h2>
+  <h2 class="anchor" id="event-list">事件列表</h2>
   <table>
 
   <thead>
@@ -1031,7 +1017,7 @@ want to <a href="#theming-dropzone">completely theme your Dropzone</a></p>
   </tbody>
 </table>
 
-  <h2 id="theming">Theming</h2>
+  <h2 id="theming">主题</h2>
 
   <p>If you want to theme your Dropzone to look fully customized, in most cases you
 can simply <a href="#layout">replace the preview HTML template</a>, adapt your CSS, and maybe create
