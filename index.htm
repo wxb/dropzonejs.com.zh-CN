@@ -837,58 +837,49 @@ config.</p>
       <td>用户把一个文件拖放到dropzone上</td>
     </tr><tr id="event-dragover">
       <td><a href="#event-dragover"><code>dragover</code></a></td>
-      <td>The user is dragging a file over the Dropzone</td>
+      <td>用户拖动一个文件在dropzone上</td>
     </tr><tr id="event-dragleave">
       <td><a href="#event-dragleave"><code>dragleave</code></a></td>
-      <td>The user dragged a file out of the Dropzone</td>
+      <td>用户拖动一个文件 Dropzone 外面</td>
     </tr><tr>
       <td class="separator" colspan="2">
 
-        All of these receive the
-        <a href="">file</a>
-        as first parameter:
+        下面所有这些都接受
+        <a href="https://developer.mozilla.org/en-US/docs/DOM/File">file</a>
+        作为第一个参数:
 
       </td>
     </tr><tr id="event-addedfile">
       <td><a href="#event-addedfile"><code>addedfile</code></a></td>
       <td>
 
-        When a file is added to the list
+        当文件被添加到上传列表
 
       </td>
     </tr><tr id="event-removedfile">
       <td><a href="#event-removedfile"><code>removedfile</code></a></td>
       <td>
 
-        Called whenever a file is removed from the list. You can listen to
-        this and delete the file from your server if you want to.
+        任何时候都可以调用这个方法来从上传列表中删除文件. 如果你想从你的服务器上面删除这个文件就可以利用这个监听方法[译者注：一定要清楚，removefile并不会删除服务器上面的文件，你需要自己实现服务器删除代码] .
 
       </td>
     </tr><tr id="event-thumbnail">
       <td><a href="#event-thumbnail"><code>thumbnail</code></a></td>
       <td>
-
-        When the thumbnail has been generated. Receives the
-        <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Data_URI_scheme  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://en.wikipedia.org/wiki/Data_URI_scheme'" tppabs="http://en.wikipedia.org/wiki/Data_URI_scheme">dataUrl</a> as
-        second parameter.
+        当已生成缩略图。接收 <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">dataUrl</a> 作为第二个参数.
 
       </td>
     </tr><tr id="event-error">
       <td><a href="#event-error"><code>error</code></a></td>
       <td>
 
-        An error occured. Receives the <code>errorMessage</code> as
-        second parameter and if the error was due to the XMLHttpRequest
-        the xhr object as third.
+        出错时. 接受 <code>errorMessage</code> 作为第二个参数，并且如果错误是 XMLHttpRequest对象， 那就作为第三个参数.
 
       </td>
     </tr><tr id="event-processing">
       <td><a href="#event-processing"><code>processing</code></a></td>
       <td>
-
-        When a file gets processed (since there is a queue not all files
-        are processed immediately). This event was called <code>processingfile</code>
-        previously.
+        当一个文件获取处理 （因为不是所有的文件会立即得到处理的队列）。以前，此事件被称为 <code>processingfile</code>.
 
       </td>
     </tr><tr id="event-uploadprogress">
@@ -915,102 +906,85 @@ config.</p>
       <td><a href="#event-sending"><code>sending</code></a></td>
       <td>
 
-        Called just before each file is sent. Gets the xhr object and the
-        <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/FormData  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/FormData'" tppabs="https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/FormData">formData</a>
-        objects as second and third parameters, so you can modify them
-        (for example to add a CSRF token) or add additional data.
+        在每个文件被发送前调用. 得到 xhr 对象 和
+        <a href="">formData</a>
+        对象作为第二个和第三个参数, 所以你可以修改他们(<form></form>add a CSRF token) 或者追加额外的数据.
 
       </td>
     </tr><tr id="event-success">
       <td><a href="#event-success"><code>success</code></a></td>
       <td>
-
-        The file has been uploaded successfully. Gets the server response
-        as second argument. (This event was called <code>finished</code>
-        previously)
+        文件已经成功上传，获得服务器返回信息作为第二个参数(这个时间又被称作<code>finished</code>)
 
       </td>
     </tr><tr id="event-complete">
       <td><a href="#event-complete"><code>complete</code></a></td>
       <td>
-
-        Called when the upload was either successful or erroneous.
+        当上传完成，成功或者出现错误时调用.
 
       </td>
     </tr><tr id="event-canceled">
       <td><a href="#event-canceled"><code>canceled</code></a></td>
       <td>
 
-        Called when a file upload gets canceled.
-
+        当取消文件上传式调用
       </td>
     </tr><tr id="event-maxfilesreached">
       <td><a href="#event-maxfilesreached"><code>maxfilesreached</code></a></td>
       <td>
-
-        Called when the number of files accepted reaches the
-        <code>maxFiles</code> limit.
+        当文件的数量达到<code>maxFiles</code>限制时调用.
 
       </td>
     </tr><tr id="event-maxfilesexceeded">
       <td><a href="#event-maxfilesexceeded"><code>maxfilesexceeded</code></a></td>
       <td>
-
-        Called for each file that has been rejected because the number of
-        files exceeds the <code>maxFiles</code> limit.
+        由于文件数量达到 <code>maxFiles</code> 限制数量被拒绝时调用.
 
       </td>
     </tr><tr>
       <td class="separator" colspan="2">
-
-        All of these receive a list of files as first parameter and are
-        only called if the <code>uploadMultiple</code> option is true:
+        下面的所有这些接受一个文件列表作为第一个参数，并且仅在 <code>uploadMultiple</code> 设置为true时使用有效:
 
       </td>
     </tr><tr id="event-processingmultiple">
       <td><a href="#event-processingmultiple"><code>processingmultiple</code></a></td>
-      <td>See <code>processing</code> for description.</td>
+      <td>查看<code>processing</code> 描述.</td>
     </tr><tr id="event-sendingmultiple">
       <td><a href="#event-sendingmultiple"><code>sendingmultiple</code></a></td>
-      <td>See <code>sending</code> for description.</td>
+      <td>查看 <code>sending</code> 描述.</td>
     </tr><tr id="event-successmultiple">
       <td><a href="#event-successmultiple"><code>successmultiple</code></a></td>
-      <td>See <code>success</code> for description.</td>
+      <td>查看 <code>success</code> 描述.</td>
     </tr><tr id="event-completemultiple">
       <td><a href="#event-completemultiple"><code>completemultiple</code></a></td>
-      <td>See <code>complete</code> for description.</td>
+      <td>查看 <code>complete</code> 描述.</td>
     </tr><tr id="event-canceledmultiple">
       <td><a href="#event-canceledmultiple"><code>canceledmultiple</code></a></td>
-      <td>See <code>canceled</code> for description.</td>
+      <td>查看 <code>canceled</code> 描述.</td>
     </tr><tr>
       <td class="separator" colspan="2">
 
-        Special events:
+        特殊事件:
 
       </td>
     </tr><tr id="event-totaluploadprogress">
       <td><a href="#event-totaluploadprogress"><code>totaluploadprogress</code></a></td>
       <td>
 
-        Called with the total <code>uploadProgress</code> (0-100), the
-        <code>totalBytes</code> and the <code>totalBytesSent</code>. This
-        event can be used to show the overall upload progress of all
-        files.
+        用 <code>uploadProgress</code> (0-100), 
+        <code>totalBytes</code> 和 <code>totalBytesSent</code>的总数调用. 此事件可以用于显示所有文件的总体上传进度.
 
       </td>
     </tr><tr id="event-reset">
       <td><a href="#event-reset"><code>reset</code></a></td>
       <td>
-
-        Called when all files in the list are removed and the dropzone is
-        reset to initial state.
+        当列表中的所有文件都被删除，并且 dropzone 被重置为初始状态时调用.
 
       </td>
     </tr><tr id="event-queuecomplete">
       <td><a href="#event-queuecomplete"><code>queuecomplete</code></a></td>
       <td>
-
-        Called when all files in the queue finish uploading.
+        当上传队列中的所有文件上传完成时调用.
 
       </td>
     </tr>
