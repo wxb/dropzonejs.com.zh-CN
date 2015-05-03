@@ -993,41 +993,31 @@ config.</p>
 
   <h2 id="theming">主题</h2>
 
-  <p>If you want to theme your Dropzone to look fully customized, in most cases you
-can simply <a href="#layout">replace the preview HTML template</a>, adapt your CSS, and maybe create
-a few additional event listeners.</p>
+  <p>如果你想完全自定义你的Dropzone主题, 大多数情况下你可以简单的 <a href="#layout">替换预览 HTML 模板</a>, 改写你的CSS是适应dropzone, 并且可以创建一些事件监听器.</p>
 
-  <p>You will go very far with this approach. As an example, I created an example
-where I made Dropzone look and feel exactly the way jQuery File Uploader does
-with a few lines of configuration code. <a href="bootstrap.html" tppabs="http://www.dropzonejs.com/bootstrap.html">Check it out!</a></p>
+  <p>用这种方法你可以做的更好。 我们创建了一个示例，在这个示例中我让dropzone看起来和感觉上完全和jQuery文件上传一样，而这仅仅是配置了几行代码. <a href="bootstrap.html" tppabs="http://www.dropzonejs.com/bootstrap.html">看看它!</a></p>
 
-  <p>As you can see, the biggest change is the <code>previewTemplate</code>. I then added a few
-additional event listeners to make it look exactly like the reference.</p>
+  <p>你可以看到, 最大的修改是 <code>previewTemplate</code>. 然后，添加几个额外的事件侦听器，使它看起来和参考的完全一样.</p>
 
-  <p><em>You can however, implement your UI completely from scratch.</em></p>
+  <p><em>你可以从新实现你的用户界面.</em></p>
 
-  <p>Dropzone itself sets up a lot of event listeners when a Dropzone is created,
-that handle all your UI. They do stuff like: create a new HTML element,
-add the <code>&lt;img&gt;</code> element when provided with image data (with the <a href="#event-thumbnail"><code>thumbnail</code></a> event),
-update the progress bar when the <a href="#event-uploadprogress"><code>uploadprogress</code></a> event fires,
-show a checkmark when the <a href="#event-success"><code>success</code></a> event fires,
-etcâ€¦</p>
+  <p>当Dropzone被创建时, Dropzone本身会在其上面设置大量的事件侦听器,
+来处理你所有的 UI. 他们添加到Dropzone中: 创建一个新的HTML 元素,
+添加<code>&lt;img&gt;</code> 元素当提供了图片信息(使用 <a href="#event-thumbnail"><code>thumbnail</code></a> 时间),
+当 <a href="#event-uploadprogress"><code>uploadprogress</code></a> 事件被触发时,更新上传进度条[译者注：就是进度条会根据上次情况更新上传进度] . 当 <a href="#event-success"><code>success</code></a> 时间触发时,显示一个选择标记,等等...</p>
 
-  <p><em>Everything</em> visual is done in those event handlers. If you would overwrite all
-of them with empty functions, Dropzone
-would still be fully functional, but wouldnâ€™t display the dropped files anymore.</p>
+  <p><em>所有的</em> 能看到的效果 都是由这些事件处理 完成的. 如果你把它们都重写成一个空函数, Dropzone
+仍然会正常工作, 但是你将看不到任何拖着的效果.</p>
 
   <blockquote>
-    <p>If you like the default look of Dropzone, but would just like to add a few
-bells and whistles here and there, you should just <a href="#events">add additional event 
-listeners</a> instead.</p>
+    <p>如果你喜欢Dropzone默认的效果, 但是仅仅想要在这些地方或者哪些地方添加一些效果, 你应该使用 <a href="#events">添加额外的时间侦听器</a> 来代替.</p>
   </blockquote>
 
-  <p>Overwriting the default event listeners, and creating your own, custom Dropzone,
-would look something like this:</p>
+  <p>重写默认的事件监听器，来创建你自己的、自定义的Dropzone,
+看起来就象这样:</p>
 
-  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// This is an example of completely disabling Dropzone&#39;s default behavior.</span>
-<span class="c1">// Do *not* use this unless you really know what you are doing.</span>
+  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// This is an example of completely disabling Dropzone&#39;s default behavior.[这是一个完全禁用Dropzone默认行为的示例]</span>
+<span class="c1">// Do *not* use this unless you really know what you are doing.[除非你真的清楚你正在做的东西，否则不要这样使用]</span>
 <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">previewTemplate</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#template-container&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="p">,</span>
   <span class="c1">// Specifing an event as an configuration option overwrites the default</span>
@@ -1045,12 +1035,12 @@ would look something like this:</p>
   <span class="c1">// etc...</span>
 <span class="p">};</span></code></pre></div>
 
-  <p>Obviously this lacks the actual implementation. Look at the source to see how
-Dropzone does it internally.</p>
+  <p>显然，这个示例缺少实际的执行实现[译者注：也就是说这是一个伪代码]. 查看源码，看看
+Dropzone 是怎样做的.</p>
 
-  <p>You should use this option if you donâ€™t need any of the default Dropzone UI,
-but are only interested in Dropzone for itâ€™s event handlers, file upload and
-dragâ€™nâ€™drop functionality.</p>
+  <p>如果你不需要任何 Dropzone 默认的UI，你应该使用上面这些选项,
+但是，这些选项作用点是在 Dropzone 事件处理, 文件上传 and
+拖放功能.</p>
 
 </section>
 
@@ -1058,26 +1048,20 @@ dragâ€™nâ€™drop functionality.</p>
 
   <h1 id="tips">小贴士</h1>
 
-  <p>If you do not want the default message at all (Â»Drop files to upload (or click)Â«), you can
-put an element inside your dropzone element with the class <code>dz-message</code> and dropzone
-will not create the message for you.</p>
+  <p>如果你不想使用默认的消息(» 放文件上传 （或单击）«), 你可以用class包含<code>dz-message</code>的HTML元素放到你的Dropzone的HTML元素中 , 这样Dropzone将不会为你创建这条信息.</p>
 
   <hr />
 
-  <p>Dropzone will submit any hidden fields you have in your dropzone form. So this
-is an easy way to submit additional data. You can also use the <code>params</code> option.</p>
+  <p>Dropzone 将提交你放到Dropzone的from中的任何隐藏的字段信息 .所以这是简单的方法来提交额外的数据. 你也可以是使用 <code>params</code> 选项.</p>
 
   <hr />
 
-  <p>Dropzone adds data to the <code>file</code> object you can use when events fire. You can
-access <code>file.width</code> and <code>file.height</code> if itâ€™s an image, as well as
-<code>file.upload</code> which is an object containing: <code>progress</code> (0-100), <code>total</code> (the
-total bytes) and <code>bytesSent</code>.</p>
+  <p>Dropzone 将数据添加到您可以使用事件触发时的<code>file</code> 对象. 如果它是一个图像,您可以访问<code>file.width</code> 和 <code>file.height</code>, 就像
+<code>file.upload</code> 是一个包含 : <code>progress</code> (0-100), <code>total</code> (总字节数) 和 <code>bytesSent</code>.的对象</p>
 
   <hr />
 
-  <p>If you want to add additional data to the file upload that has to be specific for
-each file, you can register for the <a href="#event-sending"><code>sending</code></a> event:</p>
+  <p>如果你想要将其他数据添加到每个文件上传, 你可以注册 <a href="#event-sending"><code>sending</code></a> 事件:</p>
 
   <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;sending&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">formData</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Will send the filesize along with the file as POST data.</span>
@@ -1086,8 +1070,7 @@ each file, you can register for the <a href="#event-sending"><code>sending</code
 
   <hr />
 
-  <p>To access the preview html of a file, you can access <code>file.previewElement</code>. For
-example:</p>
+  <p>若要访问一个文件的预览 html,您可以访问 <code>file.previewElement</code>. 例如:</p>
 
   <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;addedfile&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">file</span><span class="p">.</span><span class="nx">previewElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -1097,10 +1080,9 @@ example:</p>
 
   <hr />
 
-  <p>If you want the whole body to be a Dropzone and display the files somewhere else
-you can simply instantiate a Dropzone object for the body, and define the
-<a href="#config-previewsContainer"><code>previewsContainer</code></a> option. The <code>previewsContainer</code> should have the
-<code>dropzone-previews</code> or <code>dropzone</code> class to properly display the file previews.</p>
+  <p>如果你想要整个页面 body 作为一个Dropzone 并且在一些地方显示这些文件，你可以简单的实例化body作为一个 Dropzone 对象, 定义
+<a href="#config-previewsContainer"><code>previewsContainer</code></a> 选项. 这个<code>previewsContainer[预览容器]</code> 元素的class应该包含
+<code>dropzone-previews</code> 或 <code>dropzone</code> 来显示文件预览.</p>
 
   <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">new</span> <span class="nx">Dropzone</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="p">{</span>
   <span class="nx">previewsContainer</span><span class="o">:</span> <span class="s2">&quot;.dropzone-previews&quot;</span><span class="p">,</span>
@@ -1109,13 +1091,10 @@ you can simply instantiate a Dropzone object for the body, and define the
   <span class="nx">clickable</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">});</span></code></pre></div>
 
-  <p>Look at the <a href="javascript:if(confirm('https://github.com/enyo/dropzone/wiki  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/enyo/dropzone/wiki'" tppabs="https://github.com/enyo/dropzone/wiki">github wiki</a> for more examples.</p>
+  <p>查看<a href="https://github.com/enyo/dropzone/wiki">github wiki</a> 上面更多的例子.</p>
 
-  <p>If you have any problems using Dropzone, please try to find help on
-<a href="javascript:if(confirm('http://stackoverflow.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://stackoverflow.com/'" tppabs="http://stackoverflow.com/">stackoverflow.com</a> by using the <code>dropzone.js</code>
-tag.
-Only create an issue on Github when you think you found a bug or want to
-suggest a new feature.</p>
+  <p>如果你在使用 Dropzone 过程中遇到任何问题, 请尝试通过使用 <code>dropzone.js</code> 标记在<a href="http://stackoverflow.com/">stackoverflow.com</a>上找到帮助. 只有当你认为你发现了一个 bug，或者想要建议一个新的功能,
+在 Github 上创建一个问题.</p>
 
 </section>
 
@@ -1123,10 +1102,9 @@ suggest a new feature.</p>
 
   <h1 id="compatibility">兼容性</h1>
 
-  <p>This section describes compatibility with browsers and older versions of
-Dropzone.</p>
+  <p>本节描述与浏览器和 Dropzone 的较早版本的兼容性.</p>
 
-  <h2 id="browser-support">Browser Support</h2>
+  <h2 id="browser-support">浏览器支持</h2>
 
   <ul>
     <li>Chrome 7+</li>
@@ -1136,25 +1114,21 @@ Dropzone.</p>
     <li>Safari 6+</li>
   </ul>
 
-  <p>For all the other browsers, dropzone provides an oldschool file input fallback.</p>
+  <p>对于所有其他浏览器 , dropzone 提供了一个 file input 作为应对策略.</p>
 
-  <p>There is no workaround for dragâ€™nâ€™drop in older browsers â€“ it simply isnâ€™t
-supported. The same goes for image previews, etcâ€¦ But using dropzone, your
-users using an old browser <em>will</em> be able to upload files. It just wonâ€™t look
-and feel great. But hey, thatâ€™s their fault.</p>
+  <p>尚无解决方法为较旧的浏览器实现拖 ' 放,它只是不受支持. 对于图片预览也是一样的, 等等... 但使用 dropzone, 您的那些使用较旧浏览器的用户<em>将可以</em> 上传图片. 它只是不会看起来感觉很棒。但是，唉，那是他们的错。</p>
 
-  <h2 id="version-40">Version 4.0</h2>
+  <h2 id="version-40">版本 4.0</h2>
 
-  <aside>This is not a changelog. Only compatibility problems are listed.</aside>
+  <aside>这不是更新日志。列出了只兼容性问题.</aside>
 
   <ul>
-    <li>Changed the default <a href="#config-previewTemplate"><code>previewTemplate</code></a>. Check out the
-new one in the <a href="#layout">layout section</a>.</li>
+    <li>更改默认 <a href="#config-previewTemplate"><code>previewTemplate</code></a>. 在<a href="#layout">layout section</a>新加了一个.</li>
     <li>Using an already included SVG instead of a PNG spritemap (the CSS file is now
 the only additional file that you need to include)</li>
   </ul>
 
-  <h2 id="version-30">Version 3.0</h2>
+  <h2 id="version-30">版本 3.0</h2>
 
   <aside>This is not a changelog. Only compatibility problems are listed.</aside>
 
@@ -1166,7 +1140,7 @@ the only additional file that you need to include)</li>
     <li>Lots of minor fixes and changes</li>
   </ul>
 
-  <h2 id="version-20">Version 2.0</h2>
+  <h2 id="version-20">版本 2.0</h2>
 
   <aside>This is not a changelog. Only compatibility problems are listed.</aside>
 
@@ -1204,8 +1178,7 @@ now:</p>
 
   <h1 id="donate">捐赠</h1>
 
-  <p>Please consider donating if you like this project. Iâ€™ve put a lot of my free
-time into this project and donations help to justify it.</p>
+  <p>请如果你喜欢这个项目，可以考虑捐赠一下它. 我已经把我许多的空闲时间投入到了这个项目，捐款来帮助它.</p>
 
   <div>
 Use the Paypal
@@ -1217,8 +1190,8 @@ Use the Paypal
 <img alt="" border="0" src="pixel.gif" tppabs="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1" />
 </form>
 
-button, <a href="javascript:if(confirm('http://tiptheweb.org/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://tiptheweb.org/'" tppabs="http://tiptheweb.org/">tiptheweb</a> or my
-<a href="javascript:if(confirm('http://bitcoin.org/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://bitcoin.org/'" tppabs="http://bitcoin.org/">Bitcoin</a> address:
+button, <a href="http://tiptheweb.org/">tiptheweb</a> or my
+<a href="http://bitcoin.org/">Bitcoin</a> address:
 <div class="bitcoin"><code>19k17pTRGS1ykZaL7Qeju2HgXnoPXceQme</code></div>.
 </div>
 
@@ -1231,39 +1204,32 @@ button, <a href="javascript:if(confirm('http://tiptheweb.org/  \n\n¸ÃÎÄ¼þ�
   <footer>
 
     <section>
-      <h1>Written &amp; Designed by</h1>
+      <h1>编写 &amp; 设计</h1>
 
       <p>
-        <strong>Matias Meno</strong> &lt;m@tias.me&gt;, <a href="javascript:if(confirm('http://www.colorglare.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.colorglare.com/'" tppabs="http://www.colorglare.com/">www.colorglare.com</a>
+        <strong>Matias Meno</strong> &lt;m@tias.me&gt;, <a href="http://www.colorglare.com/">www.colorglare.com</a>
       </p>
 
       <p>
-        Logo and Website Design by <strong>1910</strong>, <a href="javascript:if(confirm('http://weare1910.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://weare1910.com/'" tppabs="http://weare1910.com/">weare1910.com</a>
+        Logo and 网站 由<strong>1910</strong>, <a href="http://weare1910.com/">weare1910.com</a> 设计
       </p>
     </section>
 
 
     <section class="license">
 
-      <h1>MIT License</h1>
+      <h1>MIT 许可协议</h1>
 
-      <p>Dropzone is licensed under MIT.</p>
+      <p>Dropzone 是麻省理工学院的许可.</p>
 
-      <p>Copyright (c) 2012 Matias Meno</p>
+      <p>版权所有 (c) 2012 Matias Meno</p>
 
       <p>
-        Permission is hereby granted, free of charge, to any person obtaining a
-        copy of this software and associated documentation files (the
-        "Software"), to deal in the Software without restriction, including
-        without limitation the rights to use, copy, modify, merge, publish,
-        distribute, sublicense, and/or sell copies of the Software, and to
-        permit persons to whom the Software is furnished to do so, subject to
-        the following conditions:
+        特此授权，对获得本软件副本及相关文档文件 （"软件"）的任何人都是免费的，处理该软件不受限制，包括不限使用、 复制、 修改、 合并、 发布、 分发、 再许可该软件，允许对该软件这样做的人须符合以下条件:
       </p>
 
       <p>
-        The above copyright notice and this permission notice shall be included
-        in all copies or substantial portions of the Software.
+        上面的版权声明和本许可声明应列入所有副本或实质性部分的软件.
       </p>
 
       <p>
